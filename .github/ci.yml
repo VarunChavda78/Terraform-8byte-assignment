@@ -19,5 +19,3 @@ jobs:
       - name: Build Docker image
         run: |
           docker build -t 8byte-intern-app .
-          docker run -p 3000:3000 -d 8byte-intern-app
-          
