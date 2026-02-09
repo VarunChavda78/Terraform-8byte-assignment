@@ -46,26 +46,26 @@ Public Internet (Port 3000)
 
 **Folder Structure**
 
+```
+
 .
 ├── app.js
 ├── package.json
 ├── Dockerfile
 ├── terraform/
-│ ├── main.tf
-│ ├── provider.tf
-│ ├── variables.tf
-│ ├── outputs.tf
-│ └── terraform.tfvars
+│   ├── main.tf
+│   ├── provider.tf
+│   ├── variables.tf
+│   ├── outputs.tf
+│   └── terraform.tfvars
 ├── .github/
-│ └── workflows/
-│ └── ci.yml
+│   └── workflows/
+│       └── ci.yml
 ├── README.md
 ├── APPROACH.md
 └── CHALLENGES.md
 
-**High-level flow:**
-
-
+````
 ---
 
 ## Steps to Run the Application Locally
@@ -137,5 +137,4 @@ http://35.154.141.74:3000
 
 ![alt text](image.png)
 ![alt text](image-1.png)
-![alt text](image-2.png)
 ![alt text](image-3.png)
