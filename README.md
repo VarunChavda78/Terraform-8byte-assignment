@@ -25,7 +25,7 @@ The application is deployed on an AWS EC2 instance inside a custom VPC and is ac
 ---
 
 ## Architecture Overview
-
+```
 Developer
 |
 | git push
@@ -43,11 +43,10 @@ AWS EC2 (Ubuntu 22.04)
 | Docker Container (Node.js App)
 v
 Public Internet (Port 3000)
-
+```
 **Folder Structure**
 
 ```
-
 .
 ├── app.js
 ├── package.json
