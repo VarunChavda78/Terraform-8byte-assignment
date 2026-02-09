@@ -68,10 +68,9 @@ Public Internet (Port 3000)
 
 ---
 
-## ▶️ Steps to Run the Application Locally
+## Steps to Run the Application Locally
 
-### 1️⃣ Install dependencies
-```bash
+### 1️ Install dependencies
 npm install
 
 node app.js
@@ -80,53 +79,63 @@ http://localhost:3000
 
 ---
 
-## 🐳 Steps to Build & Run Docker Image Locally
+## Steps to Build & Run Docker Image Locally
 
-### 1️⃣ Build Docker Image
-```bash
+### 1️ Build Docker Image
+
 docker build -t 8byte-intern-app .
 
-### 2️⃣ Run Docker Container
-```bash
-docker run -p 3000:3000 8byte-intern-app
+### 2️ Run Docker Container
+
+docker run -p 3000:3000 -d 8byte-intern-app
 
 ---
 
-## ☁️ Infrastructure Provisioning using Terraform
+## Infrastructure Provisioning using Terraform
 
-### 1️⃣ Initialize Terraform
-```bash
+### 1️ Initialize Terraform
 terraform init
 
-### 2️⃣ Plan Terraform
-```bash
+### 2️ Plan Terraform
 terraform plan
 
-### 3️⃣ Apply Terraform
-```bash
+### 3️ Apply Terraform
 terraform apply
 
 ---
 
-## 🚀 Deploy Application on EC2
+## Deploy Application on EC2
 
-### 1️⃣ SSH into EC2
-```bash
-ssh ubuntu@<EC2_PUBLIC_IP>
+### 1️ SSH into EC2
 
-### 2️⃣ Verify Docker installation
-```bash
+ssh ubuntu@35.154.141.74
+
+### 2️ Verify Docker installation
+
 docker --version
 
-### 3️⃣ Clone repository or copy source code
+### 3️ Clone repository or copy source code
+
 git clone https://github.com/VarunChavda78/Terraform-8byte-assignment.git
 cd Terraform-8byte-assignment
 
-### 4️⃣ Build Docker image
+### 4️ Build Docker image
+
 docker build -t 8byte-intern-app .
 
-### 5️⃣ Run Docker container
+### 5️ Run Docker container
+
 docker run -d -p 3000:3000 -d 8byte-intern-app
 
-### 6️⃣ Access application
-http://3.109.47.82:3000
+### 6️ Access application
+
+http://35.154.141.74:3000
+
+---
+
+## Sample Output 
+
+![alt text](image.png)
+![alt text](image-1.png)
+![alt text](image-2.png)
+![alt text](image-3.png)
