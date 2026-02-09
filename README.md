@@ -65,7 +65,6 @@ Public Internet (Port 3000)
 └── CHALLENGES.md
 
 ````
-```
 ---
 ## Steps to Run the Application Locally
 
