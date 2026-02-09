@@ -17,20 +17,7 @@ Removed the availability zone configuration and allowed AWS to automatically ass
 
 ---
 
-## 2. EC2 Dedicated Tenancy Error
-
-### Issue:
-EC2 instance creation failed with a `VcpuLimitExceeded` error related to dedicated tenancy.
-
-### Root Cause:
-The VPC or EC2 instance was implicitly attempting to launch with dedicated tenancy, which is not supported under AWS Free Tier limits.
-
-### Resolution:
-Explicitly set the VPC and EC2 tenancy to `default`, ensuring the instance launches as a standard shared tenancy instance.
-
----
-
-## 3. EC2 Instance Not Receiving a Public IP
+## 2. EC2 Instance Not Receiving a Public IP
 
 ### Issue:
 After successful EC2 creation, the instance did not receive a public IP address.
@@ -43,20 +30,7 @@ Enabled `associate_public_ip_address = true` at the EC2 instance level and recre
 
 ---
 
-## 4. Terraform Resource Dependencies
-
-### Issue:
-Some resources depended on others being created first, such as route tables, internet gateways, and subnets.
-
-### Root Cause:
-Incorrect or missing references between Terraform resources.
-
-### Resolution:
-Used explicit resource references (IDs) to ensure Terraform automatically handled dependency ordering.
-
----
-
-## 5. Docker Installation Verification on EC2
+## 3. Docker Installation Verification on EC2
 
 ### Issue:
 Ensuring Docker was installed correctly during EC2 provisioning without manual intervention.
@@ -69,7 +43,7 @@ Used Terraform `user_data` to install, start, and enable Docker during EC2 initi
 
 ---
 
-## 6. CI/CD Pipeline Validation
+## 4. CI/CD Pipeline Validation
 
 ### Issue:
 Ensuring the CI pipeline accurately validated Docker builds without overcomplicating deployment.

@@ -1,15 +1,13 @@
 # Approach
 
-This document explains the design decisions, tools, and workflow used to complete the DevOps Intern technical assignment.
-
-The primary goal was to create a simple, reliable, and reproducible deployment pipeline using industry-standard DevOps practices while strictly following the assignment requirements.
+Deploy a simple nodejs app on AWS server via Terraform and also included Github Action Pipeline
 
 ---
 
 ## 1. Application Strategy
 
-A lightweight Node.js (Express) application was used as provided in the assignment.  
-The application exposes a single endpoint on port 3000 to keep the focus on infrastructure, containerization, and automation rather than application complexity.
+A lightweight Node.js (Express) application was used in the assignment.
+The application exposes on port 3000 to keep the focus on infrastructure, containerization, and automation rather than application complexity.
 
 ---
 
@@ -18,9 +16,9 @@ The application exposes a single endpoint on port 3000 to keep the focus on infr
 Docker was chosen to containerize the application to ensure consistency across local, CI, and production environments.
 
 Key considerations:
-- Used an official Node.js base image for reliability
+- I use small image like node:18-alpine for lightweight
 - Installed dependencies inside the container
-- Exposed port 3000 to match application behavior
+- Exposed port 3000
 - Used a single container to keep the setup simple and transparent
 
 This approach ensures that the application runs identically on local machines, CI runners, and EC2 instances.
@@ -61,7 +59,7 @@ This approach keeps deployment simple while clearly demonstrating Docker and EC2
 
 ---
 
-## 5. CI/CD Strategy (GitHub Actions)
+## 5. CI Strategy (GitHub Actions)
 
 A GitHub Actions pipeline was implemented to automate Docker image builds.
 
@@ -81,15 +79,3 @@ The CI pipeline ensures that any change pushed to the repository does not break 
 - Application access restricted to port 3000
 - No credentials or secrets committed to the repository
 - AWS access managed locally via AWS CLI configuration
-
----
-
-## 7. Overall Design Philosophy
-
-The overall approach focused on:
-- Simplicity over complexity
-- Clarity over over-engineering
-- Aligning strictly with assignment requirements
-- Using best practices that are easy to explain and maintain
-
-This ensures the solution is production-relevant while remaining easy to understand and validate.
