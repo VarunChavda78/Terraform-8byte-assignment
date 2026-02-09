@@ -13,7 +13,7 @@ While creating the public subnet, an invalid availability zone value was used (`
 AWS requires subnets to be created within a specific availability zone (e.g., `ap-south-1a`, `ap-south-1b`).
 
 ### Resolution:
-Removed the availability zone configuration and allowed AWS to automatically assign a valid availability zone.
+I Removed the availability zone configuration and allowed AWS to automatically assign a valid availability zone.
 
 ---
 
@@ -23,34 +23,32 @@ Removed the availability zone configuration and allowed AWS to automatically ass
 After successful EC2 creation, the instance did not receive a public IP address.
 
 ### Root Cause:
-The subnet was created without public IP auto-assignment enabled, and AWS does not retroactively assign public IPs to existing instances.
+The subnet was created without public IP auto-assignment enabled, and AWS does not assign public IPs to existing instances.
 
 ### Resolution:
-Enabled `associate_public_ip_address = true` at the EC2 instance level and recreated the instance to ensure public IP assignment.
+I Enabled `associate_public_ip_address = true` at the EC2 instance level and recreated the instance to ensure public IP assignment.
 
 ---
 
 ## 3. Docker Installation Verification on EC2
 
 ### Issue:
-Ensuring Docker was installed correctly during EC2 provisioning without manual intervention.
+Docker is not work without sudo, before this i already give permission still
 
 ### Root Cause:
 Docker installation needed to be automated to match assignment requirements.
 
 ### Resolution:
-Used Terraform `user_data` to install, start, and enable Docker during EC2 initialization.
-
+I again ssh into server, It is working
 ---
 
-## 4. CI/CD Pipeline Validation
+## 4. ci.yml is not work
 
 ### Issue:
-Ensuring the CI pipeline accurately validated Docker builds without overcomplicating deployment.
+ci.yml file is not work because it is inside of workflows folder but this folder is not inside .github folder
 
 ### Resolution:
-Implemented a minimal GitHub Actions workflow focused solely on Docker image build verification triggered on pushes to the main branch.
-
+I put that folder inside .github and it is works
 ---
 
 ## Conclusion
