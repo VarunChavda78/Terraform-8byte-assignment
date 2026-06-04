@@ -1,4 +1,4 @@
-# 8byte DevOps Intern Assignment  
+# Terraform docker CI AWS
 Deploy a Containerized Node.js Application on AWS using Terraform and GitHub Actions
 
 ---
